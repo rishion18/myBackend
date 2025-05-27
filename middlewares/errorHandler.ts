@@ -14,6 +14,7 @@ export const errorHandler = (
     res: Response,
     next: NextFunction
   ) => {
+    console.log('error in error handler', err);
     const status = err.statusCode || 500;
     const message = err.message || 'Something went wrong';
     
