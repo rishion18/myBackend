@@ -1,11 +1,27 @@
 import express from 'express'
-import ApiRoute from './routes/index'
-import { connectToDb } from './utils/connectToDb'
-import { AppError, errorHandler } from './middlewares/errorHandler'
+import ApiRoute from './routes/index.js'
+import { connectToDb } from './utils/connectToDb.js'
+import { AppError, errorHandler } from './middlewares/errorHandler.js'
+import http from 'http'
+import { Server } from 'socket.io'
+
 import cors from 'cors'
+import initSocketServer from './controllers/socket.js'
 
 const startServer = async () => {
     const app = express()
+    const server = http.createServer(app)
+
+    const io = new Server(server, {
+        cors: {
+            origin: process.env.FRONTEND_URL_DEV,
+            methods: ['GET', 'POST'],
+            credentials: true,
+        }
+    })
+
+    initSocketServer(io);
+
     const port = process.env.PORT || 5000
 
     console.log('process.env.FRONTEND_URL', process.env.FRONTEND_URL_DEV)
@@ -28,7 +44,7 @@ const startServer = async () => {
 
     app.use(errorHandler)
 
-    app.listen(port, () => {
+    server.listen(port, () => {
         connectToDb()
         console.log(`Server is running on port ${port}`)
     })

@@ -1,7 +1,7 @@
 
-import { asyncHandler } from "../middlewares/asyncHandler";
-import AuthService from "../services/auth";
-import { sendSuccess } from "../utils/response";
+import { asyncHandler } from "../middlewares/asyncHandler.js";
+import AuthService from "../services/auth.js";
+import { sendSuccess } from "../utils/response.js";
 
 
 class AuthController {

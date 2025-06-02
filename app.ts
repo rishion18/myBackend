@@ -1,4 +1,4 @@
 import { config } from "dotenv";
+import startServer from "./server.js";
 config();
-import startServer from "./server";
 startServer();

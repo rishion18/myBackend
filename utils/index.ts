@@ -1,6 +1,6 @@
-import { connectToDb } from "./connectToDb";
-import { decryptPayload, encryptPayload, hashPassword, verifyPassword } from "./crypto";
-import { sendSuccess } from "./response";
+import { connectToDb } from "./connectToDb.js";
+import { decryptPayload, encryptPayload, hashPassword, verifyPassword } from "./crypto.js";
+import { sendSuccess } from "./response.js";
 
 export const UTILS = {
     CONNECT_DB: connectToDb,

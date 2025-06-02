@@ -1,9 +1,9 @@
-import { ERROR_CODES } from "../constants/errorCodes";
+import { ERROR_CODES } from "../constants/errorCodes.js";
 import { Request } from "express";
-import { generateToken } from "../helpers/tokenGenerator";
-import { AppError } from "../middlewares/errorHandler";
-import User from "../models/users.model";
-import { UTILS } from "../utils";
+import { generateToken } from "../helpers/tokenGenerator.js";
+import { AppError } from "../middlewares/errorHandler.js";
+import User from "../models/users.model.js";
+import { UTILS } from "../utils/index.js";
 
 class AuthService {
 

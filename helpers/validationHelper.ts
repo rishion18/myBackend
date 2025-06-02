@@ -1,6 +1,6 @@
-import { ERROR_CODES } from "../constants/errorCodes";
+import { ERROR_CODES } from "../constants/errorCodes.js";
 import { NextFunction, Request, Response } from "express";
-import { AppError } from "../middlewares/errorHandler";
+import { AppError } from "../middlewares/errorHandler.js";
 import { ZodSchema } from "zod";
 
 export const validate = 

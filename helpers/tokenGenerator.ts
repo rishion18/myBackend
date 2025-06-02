@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import { UTILS } from "../utils";
+import { UTILS } from "../utils/index.js";
 
 const JWT_ALGORITHM = "HS256";
 const TOKEN_EXPIRY = "1d";
